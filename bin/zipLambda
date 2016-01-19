@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+# $ pip install awscli -t libs
+#  Collecting awscli
+#    Downloading awscli-1.9.15-py2.py3-none-any.whl (852kB)
+#      100% |████████████████████████████████| 856kB 298kB/s
+#  Collecting rsa<=3.3.0,>=3.1.2 (from awscli)
+#    Downloading rsa-3.2.3-py2.py3-none-any.whl (44kB)
+#      100% |████████████████████████████████| 45kB 787kB/s
+#  Collecting botocore==1.3.15 (from awscli)
+#    Using cached botocore-1.3.15-py2.py3-none-any.whl
+#  Collecting colorama<=0.3.3,>=0.2.5 (from awscli)
+#  Collecting docutils>=0.10 (from awscli)
+#    Downloading docutils-0.12.tar.gz (1.6MB)
+#      100% |████████████████████████████████| 1.6MB 188kB/s
+#  Collecting pyasn1>=0.1.3 (from rsa<=3.3.0,>=3.1.2->awscli)
+#    Downloading pyasn1-0.1.9-py2.py3-none-any.whl
+#  Collecting jmespath<1.0.0,>=0.7.1 (from botocore==1.3.15->awscli)
+#    Using cached jmespath-0.9.0-py2.py3-none-any.whl
+#  Collecting python-dateutil<3.0.0,>=2.1 (from botocore==1.3.15->awscli)
+#    Using cached python_dateutil-2.4.2-py2.py3-none-any.whl
+#  Collecting six>=1.5 (from python-dateutil<3.0.0,>=2.1->botocore==1.3.15->awscli)
+#    Using cached six-1.10.0-py2.py3-none-any.whl
+#  Building wheels for collected packages: docutils
+#    Running setup.py bdist_wheel for docutils
+#    Stored in directory: /cygdrive/c/Users/mslinn/.cache/pip/wheels/d5/32/4f/1347e8ac67071e8150a5dc69354a51a04ac065d0b48334f608
+#  Successfully built docutils
+#  Installing collected packages: pyasn1, rsa, jmespath, six, python-dateutil, docutils, botocore, colorama, awscli
+#  Successfully installed awscli-1.7.36 botocore-1.3.15 colorama-0.3.3 docutils-0.12 jmespath-0.9.0 pyasn1-0.1.8 python-dateutil-2.4.2 rsa-3.1.4 six-1.10.0
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $DIR/..
+
+zip lambda.zip streamTest.py bin/ffmpeg fonts
+cd libs
+zip lambda.zip *
